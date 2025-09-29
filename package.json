@@ -1,0 +1,41 @@
+{
+  "name": "langchain-ecosystem-learning",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tirth-2001/langchain-ecosystem-learning.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.ts",
+    "build": "rimraf build && tsc",
+    "add-build": "git add build",
+    "test": "echo \"Error: no test case specified\" && exit 1",
+    "ts.check": "tsc --project tsconfig.json",
+    "prettier.check": "prettier --check \"src/**/*.ts\"",
+    "prettier.write": "prettier --write \"src/**/*.ts\""
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.77",
+    "@langchain/langgraph": "^0.4.9",
+    "@langchain/openai": "^0.6.13",
+    "dotenv": "^17.2.2",
+    "langchain": "^0.3.34",
+    "langsmith": "^0.3.71",
+    "openai": "^5.23.1",
+    "pinecone-client": "^2.0.0",
+    "redis": "^5.8.2",
+    "weaviate-client": "^3.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.15",
+    "@types/react-dom": "^19.1.9",
+    "nodemon": "^3.1.10",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-scripts": "^5.0.1",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1.13",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
