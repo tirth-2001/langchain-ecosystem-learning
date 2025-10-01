@@ -18,8 +18,7 @@
 import 'dotenv/config'
 
 import { ChatOpenAI } from '@langchain/openai'
-import { LLMChain } from 'langchain/chains'
-import { ChatPromptTemplate, PromptTemplate } from '@langchain/core/prompts'
+import { PromptTemplate } from '@langchain/core/prompts'
 
 // --------------------
 // 1. Raw OpenAI API Usage
@@ -71,7 +70,7 @@ async function langChainExample() {
   })
 
   // 2.2 PromptTemplate
-  const prompt = ChatPromptTemplate.fromTemplate('Write a short poem about {topic}.')
+  const prompt = PromptTemplate.fromTemplate('Write a short poem about {topic}.')
 
   // 2.3 LLM piped with Prompt for Chain
   const chain = prompt.pipe(llm)

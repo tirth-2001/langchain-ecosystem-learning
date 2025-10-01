@@ -1,0 +1,64 @@
+{
+  "history": [
+    {
+      "lc": 1,
+      "type": "constructor",
+      "id": [
+        "langchain_core",
+        "messages",
+        "HumanMessage"
+      ],
+      "kwargs": {
+        "content": "Hi, I'm Alex.",
+        "additional_kwargs": {},
+        "response_metadata": {}
+      }
+    },
+    {
+      "lc": 1,
+      "type": "constructor",
+      "id": [
+        "langchain_core",
+        "messages",
+        "AIMessage"
+      ],
+      "kwargs": {
+        "content": "Hello, Alex! It's great to meet you! I'm here to chat and help with any questions you might have. What’s on your mind today?",
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "additional_kwargs": {},
+        "response_metadata": {}
+      }
+    },
+    {
+      "lc": 1,
+      "type": "constructor",
+      "id": [
+        "langchain_core",
+        "messages",
+        "HumanMessage"
+      ],
+      "kwargs": {
+        "content": "What's my name?",
+        "additional_kwargs": {},
+        "response_metadata": {}
+      }
+    },
+    {
+      "lc": 1,
+      "type": "constructor",
+      "id": [
+        "langchain_core",
+        "messages",
+        "AIMessage"
+      ],
+      "kwargs": {
+        "content": "Your name is Alex! How can I assist you today, Alex?",
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "additional_kwargs": {},
+        "response_metadata": {}
+      }
+    }
+  ]
+}

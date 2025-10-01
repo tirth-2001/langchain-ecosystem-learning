@@ -1,0 +1,42 @@
+{
+  "lc": 1,
+  "type": "constructor",
+  "id": ["langchain_core", "prompts", "chat", "ChatPromptTemplate"],
+  "kwargs": {
+    "input_variables": ["language", "topic"],
+    "messages": [
+      {
+        "lc": 1,
+        "type": "constructor",
+        "id": ["langchain_core", "prompts", "chat", "SystemMessagePromptTemplate"],
+        "kwargs": {
+          "prompt": {
+            "lc": 1,
+            "type": "constructor",
+            "id": ["langchain_core", "prompts", "prompt", "PromptTemplate"],
+            "kwargs": {
+              "input_variables": ["language"],
+              "template": "You are a helpful assistant who always replies in {language}."
+            }
+          }
+        }
+      },
+      {
+        "lc": 1,
+        "type": "constructor",
+        "id": ["langchain_core", "prompts", "chat", "HumanMessagePromptTemplate"],
+        "kwargs": {
+          "prompt": {
+            "lc": 1,
+            "type": "constructor",
+            "id": ["langchain_core", "prompts", "prompt", "PromptTemplate"],
+            "kwargs": {
+              "input_variables": ["topic"],
+              "template": "Tell me about {topic}."
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "lc": 1,
+  "type": "constructor",
+  "id": ["langchain_core", "prompts", "prompt", "PromptTemplate"],
+  "kwargs": {
+    "input_variables": ["adjective", "content"],
+    "template": "Write a {adjective} story about {content}"
+  }
+}
