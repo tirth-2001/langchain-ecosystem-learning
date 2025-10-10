@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Session Store Utility
+ * Micro-project: Lightweight session management for tool workflows
+ *
+ * Objectives:
+ * 1. Implement lightweight session management for complex workflows
+ * 2. Demonstrate stateless orchestration patterns
+ * 3. Show context persistence and retrieval
+ *
+ * Core Concepts Covered:
+ * - Session management for tool workflows
+ * - Stateless orchestration patterns
+ * - Context persistence and retrieval
+ * - In-memory session storage
+ */
+
 // utils/sessionStore.ts
 // Lightweight session store (in-memory Map).
 // Pattern: load session, mutate context, save session (stateless orchestration friendly).

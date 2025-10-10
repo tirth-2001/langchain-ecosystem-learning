@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Hotel Search Tool
+ * Micro-project: Structured tool for searching hotels with date filtering
+ *
+ * Objectives:
+ * 1. Implement structured tool with complex Zod schema validation
+ * 2. Demonstrate date-based filtering and result formatting
+ * 3. Show proper error handling for invalid inputs
+ *
+ * Core Concepts Covered:
+ * - `DynamicStructuredTool` with complex Zod schemas
+ * - Date-based filtering and validation
+ * - Error handling for invalid inputs
+ * - Structured tool inputs with optional parameters
+ */
+
 // tools/hotelSearch.ts
 import { z } from 'zod'
 import { DynamicStructuredTool } from '@langchain/core/tools'

@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Tool Registry Utility
+ * Micro-project: Central registry for tool management and orchestration
+ *
+ * Objectives:
+ * 1. Implement centralized tool registry for complex workflows
+ * 2. Demonstrate tool metadata management and discovery
+ * 3. Show tool coordination and dependency management
+ *
+ * Core Concepts Covered:
+ * - Centralized tool registry patterns
+ * - Tool metadata management
+ * - Tool discovery and coordination
+ * - Complex workflow tool management
+ */
+
 // utils/toolRegistry.ts
 import { AttractionSearch } from '../tools/attractionSearch'
 import { WeatherLookup } from '../tools/weatherLookup'

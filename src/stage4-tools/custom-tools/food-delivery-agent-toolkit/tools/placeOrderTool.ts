@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Place Order Tool
+ * Micro-project: Custom tool for placing final food delivery orders
+ *
+ * Objectives:
+ * 1. Implement order placement with retry mechanism
+ * 2. Demonstrate final step in food delivery workflow
+ * 3. Show integration with retry wrapper for reliability
+ *
+ * Core Concepts Covered:
+ * - Custom `Tool` class implementation
+ * - Retry wrapper for API reliability
+ * - Context-dependent order placement
+ * - Mock order confirmation system
+ */
+
 import { Tool } from '@langchain/core/tools'
 import { retry } from '../utils/retryWrapper'
 import { contextStore } from '../utils/contextStore'

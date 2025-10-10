@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Adding New Tools Example
+ * Micro-project: Demonstrating extensibility and maintainability patterns
+ *
+ * Objectives:
+ * 1. Show how to add new tools to the existing system
+ * 2. Demonstrate maintainability benefits of dynamic prompt system
+ * 3. Illustrate tool integration patterns and best practices
+ *
+ * Core Concepts Covered:
+ * - Tool extensibility patterns
+ * - Dynamic prompt system benefits
+ * - Tool integration best practices
+ * - Maintainable system architecture
+ */
+
 // examples/addingNewTools.ts
 import { DynamicStructuredTool } from '@langchain/core/tools'
 import { z } from 'zod'

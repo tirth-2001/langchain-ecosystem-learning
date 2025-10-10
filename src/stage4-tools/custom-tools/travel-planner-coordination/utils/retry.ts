@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Retry Utility with Backoff
+ * Micro-project: Advanced retry mechanism with exponential backoff and timeouts
+ *
+ * Objectives:
+ * 1. Implement sophisticated retry mechanism with exponential backoff
+ * 2. Demonstrate timeout handling for long-running operations
+ * 3. Show error handling and retry strategies for external services
+ *
+ * Core Concepts Covered:
+ * - Exponential backoff retry mechanism
+ * - Timeout handling for async operations
+ * - Error handling and retry strategies
+ * - Advanced reliability patterns
+ */
+
 // utils/retry.ts
 /**
  * retryWithBackoff: run async function with retries and per-attempt timeout.

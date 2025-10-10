@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Restaurant Search Tool
+ * Micro-project: Custom tool for searching restaurants by cuisine or name
+ *
+ * Objectives:
+ * 1. Implement restaurant search functionality with mock data
+ * 2. Demonstrate context management and error handling
+ * 3. Show integration with retry wrapper for reliability
+ *
+ * Core Concepts Covered:
+ * - Custom `Tool` class implementation
+ * - Context management with `contextStore`
+ * - Retry wrapper for API reliability
+ * - Mock data integration for testing
+ */
+
 import { Tool } from '@langchain/core/tools'
 import { retry } from '../utils/retryWrapper'
 import { contextStore } from '../utils/contextStore'

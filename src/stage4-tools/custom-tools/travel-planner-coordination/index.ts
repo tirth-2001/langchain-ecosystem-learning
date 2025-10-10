@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Travel Planner Coordination Demo
+ * Micro-project: Complete travel planning workflow with tool orchestration
+ *
+ * Objectives:
+ * 1. Demonstrate complex tool coordination and orchestration
+ * 2. Show multi-step planning and execution workflow
+ * 3. Implement session management and result aggregation
+ *
+ * Core Concepts Covered:
+ * - Tool orchestration and coordination
+ * - Multi-step planning and execution
+ * - Session management and state persistence
+ * - Complex workflow with multiple specialized tools
+ */
+
 // index.ts
 import 'dotenv/config'
 import { runTravelPlanner } from './orchestrator/travelOrchestrator'

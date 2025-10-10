@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Prompt Utils Examples
+ * Micro-project: Examples demonstrating prompt utility functions
+ *
+ * Objectives:
+ * 1. Demonstrate different ways to use prompt utilities
+ * 2. Show JSON examples and template escaping patterns
+ * 3. Illustrate prompt composition and validation
+ *
+ * Core Concepts Covered:
+ * - Prompt utility function usage
+ * - JSON examples and template escaping
+ * - Prompt composition patterns
+ * - Template validation and testing
+ */
+
 // examples/promptUtilsExamples.ts
 import {
   createPromptWithJsonExamples,

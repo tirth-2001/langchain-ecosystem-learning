@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Weather Lookup Tool
+ * Micro-project: Structured tool for weather information retrieval
+ *
+ * Objectives:
+ * 1. Implement structured tool with optional date parameter
+ * 2. Demonstrate mock weather API integration
+ * 3. Show proper error handling and response formatting
+ *
+ * Core Concepts Covered:
+ * - `DynamicStructuredTool` with optional parameters
+ * - Mock API integration for weather data
+ * - Error handling and response formatting
+ * - Date-based weather queries
+ */
+
 // tools/weatherLookup.ts
 import { z } from 'zod'
 import { DynamicStructuredTool } from '@langchain/core/tools'

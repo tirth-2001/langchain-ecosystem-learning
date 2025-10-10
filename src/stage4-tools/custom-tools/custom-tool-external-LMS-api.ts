@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Custom External LMS API Tool
+ * Micro-project: Integration with external Learning Management System API
+ *
+ * Objectives:
+ * 1. Create custom tools that interact with external REST APIs
+ * 2. Implement structured input validation using Zod schemas
+ * 3. Demonstrate error handling and API response processing
+ *
+ * Core Concepts Covered:
+ * - `DynamicStructuredTool` with Zod validation
+ * - External API integration patterns
+ * - Error handling for API failures
+ * - Structured tool inputs and outputs
+ */
+
 import 'dotenv/config'
 import { z } from 'zod'
 import { DynamicStructuredTool } from '@langchain/core/tools'

@@ -1,5 +1,5 @@
 /**
- * Stage 3 – Agents: Weather Tool (Dynamic Structured Input)
+ * Stage 4 – Tools: Weather Tool (Dynamic Structured Input)
  * Micro-project: `DynamicStructuredTool` with Zod schema for weather queries
  *
  * Objectives:

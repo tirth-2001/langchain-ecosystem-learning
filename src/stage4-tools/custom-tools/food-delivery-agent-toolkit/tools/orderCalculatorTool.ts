@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Order Calculator Tool
+ * Micro-project: Custom tool for calculating order totals and delivery estimates
+ *
+ * Objectives:
+ * 1. Implement order calculation with tax and delivery estimates
+ * 2. Demonstrate context-dependent calculations
+ * 3. Show proper error handling for missing context
+ *
+ * Core Concepts Covered:
+ * - Custom `Tool` class implementation
+ * - Context-dependent calculations
+ * - Error handling for missing context
+ * - Mock pricing and delivery estimation
+ */
+
 import { Tool } from '@langchain/core/tools'
 import { contextStore } from '../utils/contextStore'
 

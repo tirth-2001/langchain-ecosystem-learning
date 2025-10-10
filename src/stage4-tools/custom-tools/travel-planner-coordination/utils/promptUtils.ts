@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Prompt Utilities
+ * Micro-project: Utility functions for prompt template handling
+ *
+ * Objectives:
+ * 1. Implement utility functions for prompt template handling
+ * 2. Demonstrate JSON escaping for template parsing
+ * 3. Show prompt composition and formatting utilities
+ *
+ * Core Concepts Covered:
+ * - Prompt template utilities
+ * - JSON escaping for template parsing
+ * - Prompt composition and formatting
+ * - Template parsing conflict resolution
+ */
+
 // utils/promptUtils.ts
 import { ChatPromptTemplate } from '@langchain/core/prompts'
 

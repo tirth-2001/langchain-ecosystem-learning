@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Attraction Search Tool
+ * Micro-project: Structured tool for searching travel attractions
+ *
+ * Objectives:
+ * 1. Implement structured tool with Zod schema validation
+ * 2. Demonstrate mock API integration for attraction data
+ * 3. Show proper error handling and response formatting
+ *
+ * Core Concepts Covered:
+ * - `DynamicStructuredTool` with Zod schemas
+ * - Mock API integration patterns
+ * - Error handling and response formatting
+ * - Structured tool inputs and outputs
+ */
+
 // tools/attractionSearch.ts
 import { z } from 'zod'
 import { DynamicStructuredTool } from '@langchain/core/tools'

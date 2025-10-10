@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Itinerary Formatter Tool
+ * Micro-project: Complex tool for formatting multi-day travel itineraries
+ *
+ * Objectives:
+ * 1. Implement complex structured tool with multiple input types
+ * 2. Demonstrate data aggregation and formatting
+ * 3. Show proper error handling for complex inputs
+ *
+ * Core Concepts Covered:
+ * - `DynamicStructuredTool` with complex schemas
+ * - Data aggregation and formatting
+ * - Error handling for complex inputs
+ * - Multi-day itinerary generation
+ */
+
 // tools/itineraryFormatter.ts
 import { z } from 'zod'
 import { DynamicStructuredTool } from '@langchain/core/tools'

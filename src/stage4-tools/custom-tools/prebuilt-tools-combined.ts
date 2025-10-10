@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Prebuilt Tools Combined Demo
+ * Micro-project: Integration of multiple built-in LangChain tools
+ *
+ * Objectives:
+ * 1. Demonstrate integration of Calculator, Search, and File I/O tools
+ * 2. Show how multiple tools work together in a single agent
+ * 3. Implement file operations with proper error handling
+ *
+ * Core Concepts Covered:
+ * - `Calculator` from @langchain/community/tools
+ * - `TavilySearch` for web search capabilities
+ * - `WriteFileTool` and `ReadFileTool` for file operations
+ * - `NodeFileStore` for file system integration
+ */
+
 import 'dotenv/config'
 import { TavilySearch } from '@langchain/tavily'
 import { NodeFileStore } from 'langchain/stores/file/node'

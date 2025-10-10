@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Dynamic Prompt Generator
+ * Micro-project: Automatic prompt generation from tool registry
+ *
+ * Objectives:
+ * 1. Implement automatic prompt generation from tool registry
+ * 2. Demonstrate maintainable prompt engineering patterns
+ * 3. Show elimination of hardcoded tool references in prompts
+ *
+ * Core Concepts Covered:
+ * - Dynamic prompt generation from tool registry
+ * - Maintainable prompt engineering
+ * - Automatic tool reference generation
+ * - JSON schema example generation
+ */
+
 // utils/dynamicPromptGenerator.ts
 import { createPromptWithJsonExamples } from './promptUtils'
 import { TOOL_DEFINITIONS, getToolNamesUnion, getToolNames, validateToolRegistry } from './toolRegistry'

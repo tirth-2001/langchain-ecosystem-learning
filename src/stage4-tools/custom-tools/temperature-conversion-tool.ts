@@ -1,5 +1,5 @@
 /**
- * Stage 3 – Agents: Temperature Conversion Tool (Tool-Calling Agent)
+ * Stage 4 – Tools: Temperature Conversion Tool
  * Micro-project: Custom `DynamicTool` for Celsius/Fahrenheit conversion
  *
  * Objectives:

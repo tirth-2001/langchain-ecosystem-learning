@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Menu Fetch Tool
+ * Micro-project: Custom tool for fetching restaurant menu items
+ *
+ * Objectives:
+ * 1. Implement menu fetching based on restaurant context
+ * 2. Demonstrate context-dependent tool behavior
+ * 3. Show proper error handling for missing context
+ *
+ * Core Concepts Covered:
+ * - Custom `Tool` class implementation
+ * - Context-dependent tool execution
+ * - Error handling for missing context
+ * - Mock data integration for menu items
+ */
+
 import { Tool } from '@langchain/core/tools'
 import { contextStore } from '../utils/contextStore'
 import * as fs from 'fs'

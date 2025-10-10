@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Travel Orchestrator
+ * Micro-project: Advanced tool orchestration with planning and execution
+ *
+ * Objectives:
+ * 1. Implement sophisticated tool orchestration with planning
+ * 2. Demonstrate parallel execution and dependency resolution
+ * 3. Show session management and result aggregation
+ *
+ * Core Concepts Covered:
+ * - Advanced tool orchestration patterns
+ * - Planning and execution separation
+ * - Parallel tool execution with dependency resolution
+ * - Session management and state persistence
+ */
+
 // orchestrator/travelOrchestrator.ts
 import { ChatOpenAI } from '@langchain/openai'
 import { plannerPrompt } from '../prompts/plannerPrompt'

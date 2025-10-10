@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Test Fixes and Validation
+ * Micro-project: Testing and validation utilities for travel planner system
+ *
+ * Objectives:
+ * 1. Implement comprehensive testing and validation for the travel planner
+ * 2. Demonstrate tool registry validation and prompt testing
+ * 3. Show system integration testing and error handling
+ *
+ * Core Concepts Covered:
+ * - Tool registry validation
+ * - Prompt testing and validation
+ * - System integration testing
+ * - Error handling and debugging
+ */
+
 // test-fixes.ts
 import 'dotenv/config'
 import { runTravelPlanner } from './orchestrator/travelOrchestrator'

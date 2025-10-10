@@ -1,3 +1,19 @@
+/**
+ * Stage 4 – Tools: Food Delivery Agent Toolkit Demo
+ * Micro-project: Complete toolkit for food delivery operations
+ *
+ * Objectives:
+ * 1. Demonstrate a comprehensive toolkit with multiple specialized tools
+ * 2. Show tool coordination and context management
+ * 3. Implement real-world food delivery workflow simulation
+ *
+ * Core Concepts Covered:
+ * - `FoodDeliveryToolkit` with multiple specialized tools
+ * - Context management with `contextStore`
+ * - Tool coordination patterns
+ * - Real-world API simulation and error handling
+ */
+
 import 'dotenv/config'
 import { ChatOpenAI } from '@langchain/openai'
 import { createToolCallingAgent, AgentExecutor } from 'langchain/agents'
