@@ -36,4 +36,28 @@
 
 // import './stage2-core-modules/memory/memory-persistence-json'
 
-import './stage2-core-modules/memory/memory-persistence-redis'
+// import './stage2-core-modules/memory/memory-persistence-redis'
+
+// import './stage3-agents/agents-foundation/calculator-tool'
+
+// import './stage3-agents/agent-types/ReAct-agent'
+
+// import './stage3-agents/agent-types/ReAct-multi-tool-assistant'
+
+// import './stage3-agents/agent-types/Plan-and-Execute-agent'
+
+// import './stage3-agents/agent-types/travel-assistant-plan-and-execute'
+
+// import './stage3-agents/agent-types/Structured-agent'
+
+// import './stage3-agents/agent-tools/temperature-conversion-tool'
+
+// import './stage3-agents/agent-tools/weather-tool-dynamic-structure'
+
+// import './stage3-agents/agent-tools/prebuilt-tools-combined'
+
+// import './stage3-agents/agent-tools/custom-tool-external-LMS-api'
+
+// import './stage3-agents/agent-tools/food-delivery-agent-toolkit/index'
+
+import './stage3-agents/agent-tools/travel-planner-coordination/index'

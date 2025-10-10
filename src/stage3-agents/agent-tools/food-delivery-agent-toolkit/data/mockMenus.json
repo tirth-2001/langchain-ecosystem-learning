@@ -1,0 +1,5 @@
+{
+  "Domino's": ["Veg Pizza", "Cheese Burst", "Coke", "Garlic Bread"],
+  "Subway": ["Veg Sub", "Chicken Sub", "Salad", "Cookies"],
+  "Biryani Express": ["Chicken Biryani", "Paneer Biryani", "Raita", "Gulab Jamun"]
+}
