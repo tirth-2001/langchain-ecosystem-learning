@@ -38,22 +38,7 @@ Stage 3 can be split into the following subsections:
 
 ---
 
-## **3.3 Tools & Custom Integrations for Agents**
-
-**Theory Topics:**
-
-- Built-in tools: Calculator, SerpAPI, etc.
-- Creating **custom tools** using `Tool` class
-- Wrapping external services (GitHub, Weather, News APIs)
-- How agents select tools dynamically
-
-**Micro-project / Demo Idea:**
-
-- **GitHub Assistant Agent** → Combines ReAct agent + GitHub API + calculator tool for real-time repo stats and calculations
-
----
-
-## **3.4 Agent Executors & Advanced Configuration**
+## **3.3 Agent Executors & Advanced Configuration**
 
 **Theory Topics:**
 
@@ -68,7 +53,7 @@ Stage 3 can be split into the following subsections:
 
 ---
 
-## **3.5 Micro-Projects / Capstone for Stage 3**
+## **3.4 Micro-Projects / Capstone for Stage 3**
 
 | Project                   | Focus                                             |
 | ------------------------- | ------------------------------------------------- |
@@ -86,9 +71,10 @@ Stage 3 can be split into the following subsections:
 | ------ | ---------------------------------------------------------- |
 | Week 1 | 3.1 Agents Foundations + Calculator Agent                  |
 | Week 2 | 3.2 Core Agent Types (ReAct, Plan-and-Execute, Structured) |
-| Week 3 | 3.3 Tools & Custom Integrations for Agents                 |
-| Week 4 | 3.4 Agent Executors & Advanced Configuration               |
-| Week 5 | 3.5 Micro-Projects / Stage 3 Capstone Agent                |
+| Week 3 | 3.3 Agent Executors & Advanced Configuration               |
+| Week 4 | 3.4 Micro-Projects / Stage 3 Capstone Agent                |
+
+**Note:** Tools & Custom Integrations have been moved to **Stage 4** to align with the ROADMAP structure.
 
 ---
 
