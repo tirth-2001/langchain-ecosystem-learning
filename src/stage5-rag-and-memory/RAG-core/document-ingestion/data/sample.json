@@ -1,0 +1,11 @@
+{
+  "title": "Sample JSON",
+  "items": [
+    { "id": 1, "name": "Alpha" },
+    { "id": 2, "name": "Beta" }
+  ],
+  "meta": {
+    "source": "local",
+    "purpose": "ingestion-test"
+  }
+}

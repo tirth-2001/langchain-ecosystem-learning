@@ -1,0 +1,4 @@
+This is a small text file to demonstrate local file ingestion.
+It will be loaded by TextLoader and chunked by the chunker module.
+
+
