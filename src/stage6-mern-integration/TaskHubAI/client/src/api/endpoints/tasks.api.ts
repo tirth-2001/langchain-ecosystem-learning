@@ -10,3 +10,12 @@ export const createTask = async (task: Omit<Task, 'id' | 'createdAt' | 'status'>
   const res = await apiClient.post<ApiResponse<Task>>('/tasks', task)
   return res.data
 }
+
+export const runTask = async (id: string) => {
+  const res = await apiClient.post<ApiResponse<Task>>(`/tasks/${id}/run`)
+  return res.data
+}
+
+export const deleteTask = async (id: string) => {
+  await apiClient.delete(`/tasks/${id}`)
+}

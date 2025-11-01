@@ -29,25 +29,23 @@ export const askController = async (req: Request, res: Response) => {
   try {
     const chain = createSimpleChatChain()
 
-    // Non-streaming fallback (for debugging)
-    // const result = await chain.invoke({ input: query });
-    // return res.json({ output: result.content });
-
     // STREAMING: use Server-Sent Events
     res.setHeader('Content-Type', 'text/event-stream')
     res.setHeader('Cache-Control', 'no-cache')
     res.setHeader('Connection', 'keep-alive')
 
-    let buffer = ''
-
     const response = await chain.stream({ input: query })
+
     for await (const chunk of response) {
       const content = chunk?.content ?? ''
-      buffer += content
-      res.write(`data: ${content}\n\n`)
+      if (content) {
+        // ✅ Send as JSON to preserve all whitespace and special characters
+        res.write(`data: ${JSON.stringify({ chunk: content })}\n\n`)
+      }
     }
 
-    res.write(`event: end\ndata: ${JSON.stringify({ full: buffer })}\n\n`)
+    // Signal completion
+    res.write(`event: end\ndata: {}\n\n`)
     res.end()
   } catch (err: any) {
     console.error('Error in /api/ask:', err.message)

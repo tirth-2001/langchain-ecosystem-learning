@@ -7,6 +7,8 @@ interface TaskContextType {
   error: string | null
   fetchTasks: () => Promise<void>
   addTask: (title: string, description: string) => Promise<void>
+  runExistingTask: (id: string) => Promise<void>
+  deleteExistingTask: (id: string) => Promise<void>
 }
 
 export const TaskContext = createContext<TaskContextType | undefined>(undefined)

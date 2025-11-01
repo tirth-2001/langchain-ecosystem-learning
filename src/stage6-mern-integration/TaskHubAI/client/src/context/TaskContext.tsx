@@ -1,5 +1,5 @@
-import { useState, type ReactNode } from 'react'
-import { createTask, getAllTasks } from '../api/endpoints/tasks.api'
+import { useState, useEffect, type ReactNode, useCallback } from 'react'
+import { createTask, getAllTasks, runTask, deleteTask } from '../api/endpoints/tasks.api'
 import { handleApiError } from '../utils/errorHandler'
 import type { Task } from '../api/types'
 import { TaskContext } from '../hooks'
@@ -8,6 +8,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
   const [tasks, setTasks] = useState<Task[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  console.log('rerendering')
 
   const fetchTasks = async () => {
     setLoading(true)
@@ -33,5 +34,49 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
     }
   }
 
-  return <TaskContext.Provider value={{ tasks, loading, error, fetchTasks, addTask }}>{children}</TaskContext.Provider>
+  const runExistingTask = async (id: string) => {
+    try {
+      const res = await runTask(id)
+      setTasks((prev) => prev.map((t) => (t.id === id ? res.data : t)))
+    } catch (err) {
+      setError(handleApiError(err))
+    }
+  }
+
+  const deleteExistingTask = async (id: string) => {
+    try {
+      await deleteTask(id)
+      setTasks((prev) => prev.filter((t) => t.id !== id))
+    } catch (err) {
+      setError(handleApiError(err))
+    }
+  }
+
+  // Polling for status updates every 5 seconds
+  const pollTasks = useCallback(() => {
+    const interval = setInterval(fetchTasks, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
+  // useEffect(() => {
+  //   fetchTasks()
+  //   const stopPolling = pollTasks()
+  //   return stopPolling
+  // }, [pollTasks])
+
+  return (
+    <TaskContext.Provider
+      value={{
+        tasks,
+        loading,
+        error,
+        fetchTasks,
+        addTask,
+        runExistingTask,
+        deleteExistingTask,
+      }}
+    >
+      {children}
+    </TaskContext.Provider>
+  )
 }

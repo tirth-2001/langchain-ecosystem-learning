@@ -37,7 +37,6 @@ export const useStreamLLM = () => {
       const reader = res.body.getReader()
       const decoder = new TextDecoder()
       let fullText = ''
-
       let partial = ''
 
       while (true) {
@@ -51,22 +50,44 @@ export const useStreamLLM = () => {
         partial = lines.pop() || ''
 
         for (const line of lines) {
+          if (!line.trim()) continue
+
+          if (line.startsWith('event: end')) {
+            continue
+          }
+
+          if (line.startsWith('event: error')) {
+            const errorLine = lines.find((l) => l.startsWith('data:'))
+            if (errorLine) {
+              const errorData = errorLine.replace(/^data:\s*/, '')
+              const parsed = JSON.parse(errorData)
+              throw new Error(parsed.error)
+            }
+            continue
+          }
+
           if (line.startsWith('data:')) {
             const content = line.replace(/^data:\s*/, '')
-            // "data:" line may contain JSON or plain text
+
             try {
               const parsed = JSON.parse(content)
-              if (parsed.full) {
-                // final full message
-                fullText = parsed.full
-                setResponse(parsed.full)
-                continue
-              }
+
+              // Handle error
               if (parsed.error) {
                 throw new Error(parsed.error)
               }
+
+              // Handle chunk with proper spacing
+              if (parsed.chunk !== undefined) {
+                fullText += parsed.chunk
+                setResponse((prev) => prev + parsed.chunk)
+              }
+
+              // Ignore empty end event
+              if (Object.keys(parsed).length === 0) continue
             } catch {
-              // plain text chunk
+              // If JSON parse fails, it might be plain text (fallback)
+              console.warn('[useStreamLLM] Non-JSON chunk received:', content)
               fullText += content
               setResponse((prev) => prev + content)
             }
@@ -78,8 +99,12 @@ export const useStreamLLM = () => {
       onComplete?.(fullText)
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      console.error('[useStreamLLM] Error:', err)
-      onError?.(err.message ?? 'Unknown error')
+      if (err.name === 'AbortError') {
+        console.log('[useStreamLLM] Stream aborted by user')
+      } else {
+        console.error('[useStreamLLM] Error:', err)
+        onError?.(err.message ?? 'Unknown error')
+      }
       setIsStreaming(false)
     }
   }, [])
