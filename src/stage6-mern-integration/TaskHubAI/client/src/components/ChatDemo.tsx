@@ -13,7 +13,7 @@ export const ChatDemo = () => {
 
   return (
     <div className="max-w-2xl mx-auto mt-6 p-4 bg-white rounded-2xl shadow">
-      <h2 className="text-xl font-bold mb-2 text-center">💬 Chat Demo</h2>
+      <h2 className="text-xl font-bold mb-2 text-center">💬 Chat Demo [Simple Ask]</h2>
 
       <div className="h-64 overflow-y-auto border p-2 rounded-md bg-gray-50 mb-3">
         {messages.map((m, i) => (

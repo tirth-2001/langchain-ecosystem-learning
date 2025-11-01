@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import * as taskService from '../services/taskService'
-import { runTaskChain } from '../langchain/chains/taskChain'
+import { runTaskChain } from '../langchainHelper/chains/taskChain'
 import { errorResponse, successResponse } from '../utils'
 
 export const create = async (req: Request, res: Response) => {

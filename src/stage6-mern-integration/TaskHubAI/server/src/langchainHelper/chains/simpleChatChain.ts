@@ -1,4 +1,4 @@
-import { ChatPromptTemplate } from '@langchain/core/prompts'
+import { ChatPromptTemplate, MessagesPlaceholder } from '@langchain/core/prompts'
 import { RunnableSequence } from '@langchain/core/runnables'
 import { getChatModel } from '../config/modelProvider'
 

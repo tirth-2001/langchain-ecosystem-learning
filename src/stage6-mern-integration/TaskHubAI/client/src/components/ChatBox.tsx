@@ -18,7 +18,7 @@ export const ChatBox = () => {
 
   return (
     <div className="w-xl mx-auto mt-8 p-4 bg-indigo-100 rounded-2xl shadow">
-      <h2 className="text-xl font-semibold text-center mb-4">🔗 Stream Chat Box</h2>
+      <h2 className="text-xl font-semibold text-center mb-4">🔗 Stream Chat Box [With Tools and Memory]</h2>
 
       <div className="border border-indigo-500 rounded-md p-3 h-80 overflow-y-auto bg-gray-50">
         {messages.map((msg, i) => (

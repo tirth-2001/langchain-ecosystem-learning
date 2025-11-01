@@ -45,7 +45,10 @@ export const LLMProvider = ({ children }: { children: ReactNode }) => {
         console.error('[streamQuestion] Error', err)
         setMessages((prev) => {
           const updated = [...prev]
-          updated[updated.length - 1] = { role: 'assistant', content: '⚠️ Streaming error occurred.' }
+          updated[updated.length - 1] = {
+            role: 'assistant',
+            content: `⚠️ Streaming error occurred. \n Error Details: ${err}`,
+          }
           return updated
         })
       },

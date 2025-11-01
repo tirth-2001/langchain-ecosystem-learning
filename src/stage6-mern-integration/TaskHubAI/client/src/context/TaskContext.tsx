@@ -1,4 +1,4 @@
-import { useState, useEffect, type ReactNode, useCallback } from 'react'
+import { useState, type ReactNode, useCallback } from 'react'
 import { createTask, getAllTasks, runTask, deleteTask } from '../api/endpoints/tasks.api'
 import { handleApiError } from '../utils/errorHandler'
 import type { Task } from '../api/types'
@@ -53,6 +53,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
   }
 
   // Polling for status updates every 5 seconds
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const pollTasks = useCallback(() => {
     const interval = setInterval(fetchTasks, 5000)
     return () => clearInterval(interval)

@@ -1,6 +1,9 @@
 import { Request, Response } from 'express'
-import { getChatModel } from '../langchain/config/modelProvider'
-import { createSimpleChatChain } from '../langchain/chains/simpleChatChain'
+import { getChatModel } from '../langchainHelper/config/modelProvider'
+import { createSimpleChatChain } from '../langchainHelper/chains/simpleChatChain'
+import { toolAgentExecutor } from '../langchainHelper/agent/toolAgentExecutor'
+import { errorResponse, successResponse } from '../utils'
+import { chatAgentExecutor } from '../langchainHelper/agent/chatAgentExecutor'
 
 export const testLLM = async (req: Request, res: Response) => {
   try {
@@ -51,5 +54,91 @@ export const askController = async (req: Request, res: Response) => {
     console.error('Error in /api/ask:', err.message)
     res.write(`event: error\ndata: ${JSON.stringify({ error: err.message })}\n\n`)
     res.end()
+  }
+}
+
+export const askControllerV2 = async (req: Request, res: Response) => {
+  const { query } = req.body
+
+  if (!query) {
+    return res.status(400).json({ error: "Missing 'query' field in body" })
+  }
+
+  try {
+    const executor = await chatAgentExecutor()
+
+    res.setHeader('Content-Type', 'text/event-stream')
+    res.setHeader('Cache-Control', 'no-cache')
+    res.setHeader('Connection', 'keep-alive')
+
+    const stream = await executor.streamEvents(
+      { input: query },
+      {
+        configurable: { sessionId: 'user-123' },
+        version: 'v2',
+      },
+    )
+
+    for await (const event of stream) {
+      console.log('Event:', event.event, event.name) // Debug log
+
+      // Stream LLM tokens (this includes responses after tool usage)
+      if (event.event === 'on_chat_model_stream') {
+        const content = event.data?.chunk?.content
+        if (content && typeof content === 'string') {
+          res.write(`data: ${JSON.stringify({ chunk: content })}\n\n`)
+        }
+      }
+
+      // Tool start
+      if (event.event === 'on_tool_start') {
+        res.write(
+          `data: ${JSON.stringify({
+            type: 'tool_start',
+            tool: event.name,
+          })}\n\n`,
+        )
+      }
+
+      // Tool end - optionally show the result
+      if (event.event === 'on_tool_end') {
+        res.write(
+          `data: ${JSON.stringify({
+            type: 'tool_end',
+            tool: event.name,
+            output: event.data?.output, // Uncomment if you want to show tool output
+          })}\n\n`,
+        )
+      }
+
+      // Chain end - final output (fallback if streaming doesn't work)
+      if (event.event === 'on_chain_end' && event.name === 'AgentExecutor') {
+        const output = event.data?.output?.output
+        if (output && typeof output === 'string') {
+          // If we didn't get streamed tokens, send the final output
+          res.write(`data: ${JSON.stringify({ chunk: output })}\n\n`)
+        }
+      }
+    }
+
+    res.write(`event: end\ndata: {}\n\n`)
+    res.end()
+  } catch (err: any) {
+    console.error('Error in /api/ask:', err.message)
+    res.write(`event: error\ndata: ${JSON.stringify({ error: err.message })}\n\n`)
+    res.end()
+  }
+}
+
+export const runTaskAgentController = async (req: Request, res: Response) => {
+  try {
+    const { query } = req.body
+    const executor = await toolAgentExecutor()
+    const result = await executor.invoke({ input: query })
+
+    res.json(successResponse(result))
+  } catch (err: any) {
+    console.error('Agent error:', err)
+    res.status(500).json(errorResponse(err.message))
   }
 }

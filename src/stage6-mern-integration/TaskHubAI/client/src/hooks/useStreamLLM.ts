@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useCallback, useRef } from 'react'
 
 interface StreamOptions {
   query: string
   onComplete?: (response: string) => void
   onError?: (error: string) => void
+  onChunk?: (chunk: string) => void
 }
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
@@ -11,14 +13,16 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 export const useStreamLLM = () => {
   const [isStreaming, setIsStreaming] = useState(false)
   const [response, setResponse] = useState('')
+  const [error, setError] = useState<string | null>(null)
   const controllerRef = useRef<AbortController | null>(null)
 
-  const startStream = useCallback(async ({ query, onComplete, onError }: StreamOptions) => {
+  const startStream = useCallback(async ({ query, onComplete, onError, onChunk }: StreamOptions) => {
     setIsStreaming(true)
     setResponse('')
+    setError(null)
 
     try {
-      const url = `${API_BASE_URL}/langchain/ask`
+      const url = `${API_BASE_URL}/langchain/v2/ask`
       controllerRef.current = new AbortController()
 
       const res = await fetch(url, {
@@ -30,8 +34,12 @@ export const useStreamLLM = () => {
         signal: controllerRef.current.signal,
       })
 
-      if (!res.ok || !res.body) {
+      if (!res.ok) {
         throw new Error(`Stream request failed with status ${res.status}`)
+      }
+
+      if (!res.body) {
+        throw new Error('Response body is null')
       }
 
       const reader = res.body.getReader()
@@ -45,51 +53,63 @@ export const useStreamLLM = () => {
 
         partial += decoder.decode(value, { stream: true })
 
-        // Process each SSE line
-        const lines = partial.split('\n\n')
-        partial = lines.pop() || ''
+        // Process each SSE message (separated by \n\n)
+        const messages = partial.split('\n\n')
+        partial = messages.pop() || ''
 
-        for (const line of lines) {
-          if (!line.trim()) continue
+        for (const message of messages) {
+          if (!message.trim()) continue
 
-          if (line.startsWith('event: end')) {
-            continue
-          }
+          // Parse SSE message into event and data
+          const lines = message.split('\n')
+          let eventType = 'message' // default event type
+          let data = ''
 
-          if (line.startsWith('event: error')) {
-            const errorLine = lines.find((l) => l.startsWith('data:'))
-            if (errorLine) {
-              const errorData = errorLine.replace(/^data:\s*/, '')
-              const parsed = JSON.parse(errorData)
-              throw new Error(parsed.error)
+          for (const line of lines) {
+            if (line.startsWith('event:')) {
+              eventType = line.replace(/^event:\s*/, '').trim()
+            } else if (line.startsWith('data:')) {
+              data = line.replace(/^data:\s*/, '').trim()
+            } else if (line.startsWith(':')) {
+              // Ignore comments (heartbeat)
+              continue
             }
-            continue
           }
 
-          if (line.startsWith('data:')) {
-            const content = line.replace(/^data:\s*/, '')
-
+          // Handle different event types
+          if (eventType === 'error') {
             try {
-              const parsed = JSON.parse(content)
+              const parsed = JSON.parse(data)
+              throw new Error(parsed.error || 'Stream error occurred')
+            } catch (e: any) {
+              throw new Error(e.message || 'Stream error occurred')
+            }
+          } else if (eventType === 'end') {
+            // Stream completed successfully
+            console.log('[useStreamLLM] Stream ended')
+            continue
+          } else {
+            // Regular data chunk
+            if (data) {
+              try {
+                const parsed = JSON.parse(data)
 
-              // Handle error
-              if (parsed.error) {
-                throw new Error(parsed.error)
+                if (parsed.error) {
+                  throw new Error(parsed.error)
+                }
+
+                if (parsed.chunk !== undefined) {
+                  fullText += parsed.chunk
+                  setResponse((prev) => prev + parsed.chunk)
+                  onChunk?.(parsed.chunk)
+                }
+              } catch (e) {
+                // If JSON parse fails, treat as plain text
+                console.warn('[useStreamLLM] Non-JSON chunk received:', { data, error: e })
+                fullText += data
+                setResponse((prev) => prev + data)
+                onChunk?.(data)
               }
-
-              // Handle chunk with proper spacing
-              if (parsed.chunk !== undefined) {
-                fullText += parsed.chunk
-                setResponse((prev) => prev + parsed.chunk)
-              }
-
-              // Ignore empty end event
-              if (Object.keys(parsed).length === 0) continue
-            } catch {
-              // If JSON parse fails, it might be plain text (fallback)
-              console.warn('[useStreamLLM] Non-JSON chunk received:', content)
-              fullText += content
-              setResponse((prev) => prev + content)
             }
           }
         }
@@ -97,15 +117,17 @@ export const useStreamLLM = () => {
 
       setIsStreaming(false)
       onComplete?.(fullText)
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       if (err.name === 'AbortError') {
         console.log('[useStreamLLM] Stream aborted by user')
+        setIsStreaming(false)
       } else {
         console.error('[useStreamLLM] Error:', err)
-        onError?.(err.message ?? 'Unknown error')
+        const errorMsg = err.message ?? 'Unknown error'
+        setError(errorMsg)
+        onError?.(errorMsg)
+        setIsStreaming(false)
       }
-      setIsStreaming(false)
     }
   }, [])
 
@@ -116,5 +138,11 @@ export const useStreamLLM = () => {
     }
   }, [])
 
-  return { response, isStreaming, startStream, stopStream }
+  return {
+    response,
+    isStreaming,
+    error,
+    startStream,
+    stopStream,
+  }
 }
