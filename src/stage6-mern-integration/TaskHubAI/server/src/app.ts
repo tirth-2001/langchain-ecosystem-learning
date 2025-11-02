@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import routes from './routes'
 import { errorHandler } from './middleware/errorHandler'
+import { connectDB } from './config/db'
 
 const app: Application = express()
 
@@ -18,6 +19,9 @@ app.use('/api', routes)
 
 // Error handler (must be last)
 app.use(errorHandler)
+
+// Connect DB
+connectDB()
 
 // Server Listen
 app.listen(Config.port, () => {

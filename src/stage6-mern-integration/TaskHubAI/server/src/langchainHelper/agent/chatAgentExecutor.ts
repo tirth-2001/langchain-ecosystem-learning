@@ -5,6 +5,7 @@ import { ChatMessageHistory } from 'langchain/memory'
 import { RunnableWithMessageHistory } from '@langchain/core/runnables'
 import { availableTools } from '../tools'
 import { DynamicTool } from '@langchain/core/tools'
+import { getSessionMessages } from '../../services/chatService'
 
 // Store for conversation histories (in production, use Redis/DB)
 const messageHistories: Record<string, ChatMessageHistory> = {}
@@ -46,11 +47,25 @@ export const chatAgentExecutor = async () => {
   // Wrap with message history for memory
   const withMessageHistory = new RunnableWithMessageHistory({
     runnable: executor,
+    // getMessageHistory: async (sessionId) => {
+    //   if (!messageHistories[sessionId]) {
+    //     messageHistories[sessionId] = new ChatMessageHistory()
+    //   }
+    //   return messageHistories[sessionId]
+    // },
     getMessageHistory: async (sessionId) => {
-      if (!messageHistories[sessionId]) {
-        messageHistories[sessionId] = new ChatMessageHistory()
+      const history = new ChatMessageHistory()
+      const messages = await getSessionMessages(sessionId)
+
+      for (const msg of messages) {
+        if (msg.role === 'human') {
+          history.addUserMessage(msg.content)
+        } else {
+          history.addAIMessage(msg.content)
+        }
       }
-      return messageHistories[sessionId]
+
+      return history
     },
     inputMessagesKey: 'input',
     historyMessagesKey: 'chat_history',

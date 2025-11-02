@@ -15,6 +15,7 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "langchain": "0.3.35",
+    "mongoose": "^8.19.2",
     "morgan": "^1.10.1"
   },
   "devDependencies": {
