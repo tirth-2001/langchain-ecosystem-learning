@@ -1,0 +1,791 @@
+[
+  {
+    "time": "2025-11-06T17:18:16.752Z",
+    "event": "on_chain_start",
+    "node": "LangGraph",
+    "data": {
+      "input": {
+        "input": "LangGraph enables structured reasoning for AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.766Z",
+    "event": "on_chain_start",
+    "node": "__start__",
+    "data": {
+      "input": "LangGraph enables structured reasoning for AI agents."
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.770Z",
+    "event": "on_chain_start",
+    "node": "ChannelWrite<...>",
+    "data": {
+      "input": "LangGraph enables structured reasoning for AI agents."
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.779Z",
+    "event": "on_chain_end",
+    "node": "ChannelWrite<...>",
+    "data": {
+      "input": "LangGraph enables structured reasoning for AI agents.",
+      "output": {
+        "input": "LangGraph enables structured reasoning for AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.782Z",
+    "event": "on_chain_start",
+    "node": "ChannelWrite<branch:to:summarizer>",
+    "data": {
+      "input": "LangGraph enables structured reasoning for AI agents."
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.783Z",
+    "event": "on_chain_end",
+    "node": "ChannelWrite<branch:to:summarizer>",
+    "data": {
+      "input": "LangGraph enables structured reasoning for AI agents.",
+      "output": {
+        "input": "LangGraph enables structured reasoning for AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.783Z",
+    "event": "on_chain_end",
+    "node": "__start__",
+    "data": {
+      "input": "LangGraph enables structured reasoning for AI agents.",
+      "output": {
+        "input": "LangGraph enables structured reasoning for AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.789Z",
+    "event": "on_chain_start",
+    "node": "summarizer",
+    "data": {
+      "input": "LangGraph enables structured reasoning for AI agents."
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.790Z",
+    "event": "on_chain_start",
+    "node": "RunnableSequence",
+    "data": {
+      "input": {
+        "text": "LangGraph enables structured reasoning for AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.792Z",
+    "event": "on_prompt_start",
+    "node": "ChatPromptTemplate",
+    "data": {
+      "input": {
+        "text": "LangGraph enables structured reasoning for AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.794Z",
+    "event": "on_prompt_end",
+    "node": "ChatPromptTemplate",
+    "data": {
+      "input": {
+        "text": "LangGraph enables structured reasoning for AI agents."
+      },
+      "output": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "prompt_values",
+          "ChatPromptValue"
+        ],
+        "kwargs": {
+          "messages": [
+            {
+              "lc": 1,
+              "type": "constructor",
+              "id": [
+                "langchain_core",
+                "messages",
+                "HumanMessage"
+              ],
+              "kwargs": {
+                "content": "\nSummarize the following user text in one concise sentence:\nLangGraph enables structured reasoning for AI agents.\n",
+                "additional_kwargs": {},
+                "response_metadata": {}
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:16.796Z",
+    "event": "on_chat_model_start",
+    "node": "ChatOpenAI",
+    "data": {
+      "input": {
+        "messages": [
+          [
+            {
+              "lc": 1,
+              "type": "constructor",
+              "id": [
+                "langchain_core",
+                "messages",
+                "HumanMessage"
+              ],
+              "kwargs": {
+                "content": "\nSummarize the following user text in one concise sentence:\nLangGraph enables structured reasoning for AI agents.\n",
+                "additional_kwargs": {},
+                "response_metadata": {}
+              }
+            }
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:17.886Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": "",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:17.887Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": "Lang",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:17.988Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": "Graph",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:17.990Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": " facilitates",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:17.994Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": " structured",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:17.995Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": " reasoning",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:17.997Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": " in",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:17.997Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": " AI",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.133Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": " agents",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.134Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": ".",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.140Z",
+    "event": "on_chat_model_stream",
+    "node": "ChatOpenAI",
+    "data": {
+      "chunk": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": "",
+          "tool_call_chunks": [],
+          "additional_kwargs": {},
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "response_metadata": {
+            "usage": {}
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.176Z",
+    "event": "on_chat_model_end",
+    "node": "ChatOpenAI",
+    "data": {
+      "input": {
+        "messages": [
+          [
+            {
+              "lc": 1,
+              "type": "constructor",
+              "id": [
+                "langchain_core",
+                "messages",
+                "HumanMessage"
+              ],
+              "kwargs": {
+                "content": "\nSummarize the following user text in one concise sentence:\nLangGraph enables structured reasoning for AI agents.\n",
+                "additional_kwargs": {},
+                "response_metadata": {}
+              }
+            }
+          ]
+        ]
+      },
+      "output": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": "LangGraph facilitates structured reasoning in AI agents.",
+          "additional_kwargs": {},
+          "response_metadata": {
+            "usage": {
+              "prompt_tokens": 29,
+              "completion_tokens": 9,
+              "total_tokens": 38,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "audio_tokens": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "audio_tokens": 0,
+                "accepted_prediction_tokens": 0,
+                "rejected_prediction_tokens": 0
+              }
+            }
+          },
+          "tool_call_chunks": [],
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "usage_metadata": {
+            "input_tokens": 29,
+            "output_tokens": 9,
+            "total_tokens": 38,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 0
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.177Z",
+    "event": "on_chain_start",
+    "node": "RunnableLambda",
+    "data": {
+      "input": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": "LangGraph facilitates structured reasoning in AI agents.",
+          "additional_kwargs": {},
+          "response_metadata": {
+            "usage": {
+              "prompt_tokens": 29,
+              "completion_tokens": 9,
+              "total_tokens": 38,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "audio_tokens": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "audio_tokens": 0,
+                "accepted_prediction_tokens": 0,
+                "rejected_prediction_tokens": 0
+              }
+            }
+          },
+          "tool_call_chunks": [],
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "usage_metadata": {
+            "input_tokens": 29,
+            "output_tokens": 9,
+            "total_tokens": 38,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 0
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.179Z",
+    "event": "on_chain_end",
+    "node": "RunnableLambda",
+    "data": {
+      "input": {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain_core",
+          "messages",
+          "AIMessageChunk"
+        ],
+        "kwargs": {
+          "content": "LangGraph facilitates structured reasoning in AI agents.",
+          "additional_kwargs": {},
+          "response_metadata": {
+            "usage": {
+              "prompt_tokens": 29,
+              "completion_tokens": 9,
+              "total_tokens": 38,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "audio_tokens": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "audio_tokens": 0,
+                "accepted_prediction_tokens": 0,
+                "rejected_prediction_tokens": 0
+              }
+            }
+          },
+          "tool_call_chunks": [],
+          "id": "chatcmpl-CYxug4VTvcoePNwdYXqXOcwHUwASr",
+          "usage_metadata": {
+            "input_tokens": 29,
+            "output_tokens": 9,
+            "total_tokens": 38,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 0
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          },
+          "tool_calls": [],
+          "invalid_tool_calls": []
+        }
+      },
+      "output": "LangGraph facilitates structured reasoning in AI agents."
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.179Z",
+    "event": "on_chain_end",
+    "node": "RunnableSequence",
+    "data": {
+      "input": {
+        "text": "LangGraph enables structured reasoning for AI agents."
+      },
+      "output": "LangGraph facilitates structured reasoning in AI agents."
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.180Z",
+    "event": "on_chain_start",
+    "node": "ChannelWrite<...>",
+    "data": {
+      "input": {
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.182Z",
+    "event": "on_chain_end",
+    "node": "ChannelWrite<...>",
+    "data": {
+      "input": {
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      },
+      "output": {
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.185Z",
+    "event": "on_chain_start",
+    "node": "ChannelWrite<branch:to:logger>",
+    "data": {
+      "input": {
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.186Z",
+    "event": "on_chain_end",
+    "node": "ChannelWrite<branch:to:logger>",
+    "data": {
+      "input": {
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      },
+      "output": {
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.186Z",
+    "event": "on_chain_end",
+    "node": "summarizer",
+    "data": {
+      "input": "LangGraph enables structured reasoning for AI agents.",
+      "output": {
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.192Z",
+    "event": "on_chain_stream",
+    "node": "LangGraph",
+    "data": {
+      "chunk": {
+        "summarizer": {
+          "summary": "LangGraph facilitates structured reasoning in AI agents."
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.192Z",
+    "event": "on_chain_start",
+    "node": "logger",
+    "data": {
+      "input": "LangGraph enables structured reasoning for AI agents."
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.193Z",
+    "event": "on_chain_start",
+    "node": "ChannelWrite<...>",
+    "data": {
+      "input": "LangGraph enables structured reasoning for AI agents."
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.196Z",
+    "event": "on_chain_end",
+    "node": "ChannelWrite<...>",
+    "data": {
+      "input": {
+        "input": "LangGraph enables structured reasoning for AI agents.",
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      },
+      "output": {
+        "input": "LangGraph enables structured reasoning for AI agents.",
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.197Z",
+    "event": "on_chain_end",
+    "node": "logger",
+    "data": {
+      "input": {
+        "input": "LangGraph enables structured reasoning for AI agents.",
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      },
+      "output": {
+        "input": "LangGraph enables structured reasoning for AI agents.",
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.221Z",
+    "event": "on_chain_stream",
+    "node": "LangGraph",
+    "data": {
+      "chunk": {
+        "logger": {
+          "input": "LangGraph enables structured reasoning for AI agents.",
+          "summary": "LangGraph facilitates structured reasoning in AI agents."
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-06T17:18:18.223Z",
+    "event": "on_chain_end",
+    "node": "LangGraph",
+    "data": {
+      "output": {
+        "input": "LangGraph enables structured reasoning for AI agents.",
+        "summary": "LangGraph facilitates structured reasoning in AI agents."
+      }
+    }
+  }
+]
