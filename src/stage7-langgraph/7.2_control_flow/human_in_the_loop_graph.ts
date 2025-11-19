@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Control Flow: Modern HITL with Interrupts
+ * Micro-project: Using the `interrupt` function for human review
+ *
+ * Objectives:
+ * 1. Implement the modern `interrupt()` pattern within a node
+ * 2. Pause execution to request human feedback
+ * 3. Resume execution using `Command.resume` with the provided feedback
+ *
+ * Core Concepts Covered:
+ * - `interrupt()`: The dynamic way to pause execution from within a node
+ * - `Command.resume`: Resuming the graph and passing data back to the interrupt point
+ * - Checkpointing: Essential for maintaining state during the pause
+ */
+
 import { Annotation, StateGraph, END, START, Command, interrupt } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'

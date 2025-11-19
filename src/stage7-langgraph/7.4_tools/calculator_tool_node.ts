@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Tools: Custom Tool Integration
+ * Micro-project: Calculator tool within a graph
+ *
+ * Objectives:
+ * 1. Create a custom "Calculator" tool function
+ * 2. Build a graph node that executes this tool based on state
+ * 3. Use an LLM to interpret the tool's output and formulate a final answer
+ *
+ * Core Concepts Covered:
+ * - Tool Nodes: Encapsulating specific functionality (math)
+ * - State Flow: Passing input -> Tool -> Result -> LLM
+ * - Output Interpretation: LLM explaining the tool's raw output
+ */
+
 import { Annotation, StateGraph, START, END } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'

@@ -1,6 +1,18 @@
 /**
- * 7.4.2 — Graph with Web Tool Node (Weather API)
+ * Stage 7 – LangGraph Tools: External API Integration
+ * Micro-project: Weather API tool graph
+ *
+ * Objectives:
+ * 1. Integrate an external REST API (wttr.in) as a graph tool
+ * 2. Use an LLM to extract parameters (location) from user input
+ * 3. Fetch real-time data and format it into a natural language response
+ *
+ * Core Concepts Covered:
+ * - Parameter Extraction: Getting structured data (location) from text
+ * - API Tools: Making HTTP requests (axios) within a node
+ * - Data Formatting: Converting raw JSON into user-friendly text
  */
+
 import { Annotation, StateGraph, START, END } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'

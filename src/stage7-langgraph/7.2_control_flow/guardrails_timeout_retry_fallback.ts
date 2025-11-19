@@ -1,3 +1,19 @@
+/**
+ * Stage 7 – LangGraph Control Flow: Advanced Guardrails
+ * Micro-project: Building resilient graphs with timeouts and retries
+ *
+ * Objectives:
+ * 1. Implement strict timeouts for LLM calls to prevent hanging
+ * 2. Combine retries with timeouts for maximum reliability
+ * 3. Use guardrails to validate outputs and trigger fallbacks
+ *
+ * Core Concepts Covered:
+ * - Timeouts: Using `Promise.race` to enforce time limits
+ * - Resilience: Layering retries and timeouts
+ * - Guardrails: Validating results before proceeding
+ * - Fallback Strategies: Graceful degradation when primary paths fail
+ */
+
 import { Annotation, StateGraph, START, END } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import 'dotenv/config'

@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Fundamentals: Multi-Node Workflow
+ * Micro-project: Chaining multiple nodes sequentially
+ *
+ * Objectives:
+ * 1. Create a multi-step workflow (Generation -> Formatting)
+ * 2. Pass data between nodes using the shared state
+ * 3. Demonstrate how downstream nodes consume upstream outputs
+ *
+ * Core Concepts Covered:
+ * - Sequential Edges: Connecting Node A -> Node B
+ * - State Flow: How state evolves through the graph
+ * - Separation of Concerns: Splitting logic into distinct nodes
+ */
+
 import { StateGraph, Annotation, END } from '@langchain/langgraph'
 import { ChatPromptTemplate } from '@langchain/core/prompts'
 import { RunnableSequence } from '@langchain/core/runnables'

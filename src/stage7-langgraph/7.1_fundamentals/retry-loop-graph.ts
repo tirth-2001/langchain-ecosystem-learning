@@ -1,3 +1,19 @@
+/**
+ * Stage 7 – LangGraph Fundamentals: Cyclic Graphs & Retries
+ * Micro-project: Planner-Worker-Checker loop pattern
+ *
+ * Objectives:
+ * 1. Implement a cyclic graph where nodes can loop back to previous steps
+ * 2. Create a "Checker" node to evaluate progress and decide next moves
+ * 3. Implement safety mechanisms (max iterations) to prevent infinite loops
+ *
+ * Core Concepts Covered:
+ * - Cyclic Graphs: Flows that revisit nodes
+ * - Planner-Worker-Checker: A common agentic pattern
+ * - Conditional Loops: Continuing or exiting based on state
+ * - Max Iterations: Preventing runaway execution
+ */
+
 import { StateGraph, Annotation, END } from '@langchain/langgraph'
 import { ChatPromptTemplate } from '@langchain/core/prompts'
 import { ChatOpenAI } from '@langchain/openai'

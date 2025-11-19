@@ -1,3 +1,20 @@
+/**
+ * Stage 7 – LangGraph Fundamentals: Hello World
+ * Micro-project: Basic StateGraph structure
+ *
+ * Objectives:
+ * 1. Define a simple StateAnnotation
+ * 2. Create a basic node that modifies state
+ * 3. Build and compile a linear graph
+ * 4. Execute the graph with initial state
+ *
+ * Core Concepts Covered:
+ * - StateGraph: The core container for the workflow
+ * - Annotation: Defining the schema of the graph state
+ * - Nodes: Functions that perform work and return state updates
+ * - Edges: Defining the flow of execution (START -> Node -> END)
+ */
+
 import { Annotation, StateGraph, END } from '@langchain/langgraph'
 
 // 1) Define the state structure

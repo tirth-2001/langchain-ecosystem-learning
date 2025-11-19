@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Tools: Error Handling
+ * Micro-project: Resilient tool execution with error recovery
+ *
+ * Objectives:
+ * 1. Wrap unsafe tool execution in a safe wrapper node
+ * 2. Catch errors and store them in the graph state
+ * 3. Route to a dedicated error handler node when failures occur
+ *
+ * Core Concepts Covered:
+ * - Error Propagation: Managing exceptions within the graph
+ * - Safe Wrappers: Try/Catch blocks around risky operations
+ * - Conditional Fallbacks: Routing based on error presence
+ */
+
 import { Annotation, StateGraph, END, START } from '@langchain/langgraph'
 import 'dotenv/config'
 

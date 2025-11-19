@@ -1,3 +1,19 @@
+/**
+ * Stage 7 – LangGraph Control Flow: Parallel Execution
+ * Micro-project: Fan-out/Fan-in pattern for concurrent processing
+ *
+ * Objectives:
+ * 1. Demonstrate how to run multiple nodes in parallel (Fan-out)
+ * 2. Aggregate results from parallel nodes into a single state (Fan-in)
+ * 3. Use the `Command` object to direct flow to multiple destinations
+ *
+ * Core Concepts Covered:
+ * - Parallelism: Executing independent tasks simultaneously
+ * - Fan-out: Triggering multiple downstream nodes from one source
+ * - Fan-in: Collecting results from multiple upstream nodes
+ * - State Merging: Combining concurrent updates safely
+ */
+
 import { Annotation, StateGraph, END, START, Command } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'

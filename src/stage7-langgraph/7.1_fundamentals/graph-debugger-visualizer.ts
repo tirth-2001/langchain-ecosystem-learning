@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Fundamentals: Debugging & Visualization
+ * Micro-project: Graph introspection and visualization tools
+ *
+ * Objectives:
+ * 1. Implement a debugger hook to trace graph execution events
+ * 2. Visualize the graph structure using Mermaid.js
+ * 3. Capture and log state snapshots at each step
+ *
+ * Core Concepts Covered:
+ * - streamEvents: Real-time execution tracing
+ * - drawMermaid: Generating visual representations of the graph
+ * - Debugging: Logging state transitions and node outputs
+ */
+
 import { StateGraph, Annotation, END } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'

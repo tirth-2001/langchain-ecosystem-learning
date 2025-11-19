@@ -1,3 +1,19 @@
+/**
+ * Stage 7 – LangGraph Control Flow: Human-in-the-Loop (HITL) Masterclass
+ * Micro-project: Comprehensive guide to human interaction patterns
+ *
+ * Objectives:
+ * 1. Demonstrate the "Interrupt" pattern for pausing graph execution
+ * 2. Show how to resume execution with human feedback
+ * 3. Compare different HITL approaches (Interrupt vs. Manual Pause vs. Conditional)
+ *
+ * Core Concepts Covered:
+ * - Checkpointing: Saving graph state to allow pausing and resuming
+ * - Interrupts: `interruptBefore` / `interruptAfter` configuration
+ * - Threading: Managing unique conversation sessions
+ * - State Updates: Injecting human feedback into the resumed graph
+ */
+
 import { Annotation, StateGraph, END, START } from '@langchain/langgraph'
 import { MemorySaver } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'

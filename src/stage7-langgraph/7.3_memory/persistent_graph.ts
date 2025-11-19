@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Memory: Persistence & Checkpointing
+ * Micro-project: Saving and resuming graph state across runs
+ *
+ * Objectives:
+ * 1. Implement a checkpointer (`MemorySaver`) to persist graph state
+ * 2. Use `thread_id` to identify and retrieve specific sessions
+ * 3. Demonstrate how to resume a conversation from a previous state
+ *
+ * Core Concepts Covered:
+ * - Checkpointers: Mechanisms for saving state (Memory, SQLite, Postgres)
+ * - Threading: Isolating different user sessions
+ * - Persistence: Retaining context across independent graph invocations
+ */
+
 import { Annotation, StateGraph, START, END, MemorySaver } from '@langchain/langgraph'
 import 'dotenv/config'
 

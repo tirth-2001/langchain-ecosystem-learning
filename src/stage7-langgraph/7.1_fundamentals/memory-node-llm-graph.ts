@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Fundamentals: Memory Management
+ * Micro-project: Building a graph with persistent chat history
+ *
+ * Objectives:
+ * 1. Implement a memory node to manage conversation history
+ * 2. Use reducers to append new messages to the state
+ * 3. Create a context-aware LLM node that uses the history
+ *
+ * Core Concepts Covered:
+ * - Reducers: Merging new data into existing state arrays
+ * - Chat History: Persisting conversation context across turns
+ * - MessagesPlaceholder: Injecting history into prompts
+ */
+
 import { StateGraph, Annotation, END } from '@langchain/langgraph'
 import { ChatPromptTemplate, MessagesPlaceholder } from '@langchain/core/prompts'
 import { RunnableSequence } from '@langchain/core/runnables'

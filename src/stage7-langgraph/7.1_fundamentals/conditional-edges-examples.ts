@@ -1,3 +1,19 @@
+/**
+ * Stage 7 – LangGraph Fundamentals: Conditional Edges Masterclass
+ * Micro-project: Comprehensive guide to routing and control flow
+ *
+ * Objectives:
+ * 1. Demonstrate various routing patterns (Basic, Multi-way, Fallback)
+ * 2. Implement loops and retry logic with safety limits
+ * 3. Show complex state-based routing and early exit strategies
+ *
+ * Core Concepts Covered:
+ * - addConditionalEdges: Dynamic routing based on state
+ * - Router Functions: Logic to determine the next node
+ * - Cycles: Creating loops for retries or iterative processes
+ * - Safety: Implementing max iterations to prevent infinite loops
+ */
+
 import { StateGraph, Annotation, END, START } from '@langchain/langgraph'
 
 /**

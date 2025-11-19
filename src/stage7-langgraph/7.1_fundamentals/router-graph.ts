@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Fundamentals: Router Node Pattern
+ * Micro-project: Classification-based workflow routing
+ *
+ * Objectives:
+ * 1. Create a dedicated "Router" node to classify user intent
+ * 2. Route execution to different specialized nodes based on classification
+ * 3. Handle different types of tasks (General Q&A vs Math)
+ *
+ * Core Concepts Covered:
+ * - Router Node: A node solely responsible for decision making
+ * - Conditional Edges: Mapping router output to graph branches
+ * - Specialized Workers: Nodes focused on specific tasks
+ */
+
 import { StateGraph, Annotation, END } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'

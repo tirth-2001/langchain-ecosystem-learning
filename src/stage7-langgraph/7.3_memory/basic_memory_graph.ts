@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Memory: Basic Conversation History
+ * Micro-project: Implementing standard chat memory
+ *
+ * Objectives:
+ * 1. Create a graph that retains conversation history within a single run
+ * 2. Use a reducer to append new messages to the history array
+ * 3. Inject the history into the LLM prompt for context-aware responses
+ *
+ * Core Concepts Covered:
+ * - State Reducers: Accumulating data (appending to arrays)
+ * - Context Injection: Passing history to the LLM
+ * - Memory Nodes: Explicit nodes for managing state updates
+ */
+
 import { Annotation, StateGraph, START, END } from '@langchain/langgraph'
 import { ChatPromptTemplate } from '@langchain/core/prompts'
 import { ChatOpenAI } from '@langchain/openai'

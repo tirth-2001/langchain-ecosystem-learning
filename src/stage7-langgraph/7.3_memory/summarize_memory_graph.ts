@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Memory: Summarization Strategy
+ * Micro-project: Managing long conversations with periodic summarization
+ *
+ * Objectives:
+ * 1. Implement a strategy to handle long context windows
+ * 2. Create a summarizer node that condenses history when it gets too long
+ * 3. Maintain a "running summary" while clearing raw message history
+ *
+ * Core Concepts Covered:
+ * - Context Management: Optimizing token usage
+ * - Summarization Node: A specialized node for compressing state
+ * - State Reset: Clearing arrays while preserving distilled information
+ */
+
 import { Annotation, StateGraph, START, END } from '@langchain/langgraph'
 import { ChatPromptTemplate } from '@langchain/core/prompts'
 import { ChatOpenAI } from '@langchain/openai'

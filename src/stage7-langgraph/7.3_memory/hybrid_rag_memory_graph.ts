@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Memory: Hybrid RAG & Summarization
+ * Micro-project: Advanced state management with retrieval and memory
+ *
+ * Objectives:
+ * 1. Combine RAG (Retrieval Augmented Generation) with conversation summarization
+ * 2. Manage a complex state object with multiple reducers
+ * 3. Implement a loop that continues until the LLM signals completion
+ *
+ * Core Concepts Covered:
+ * - Hybrid State: Managing history, summary, and retrieved docs simultaneously
+ * - RAG Integration: Fetching external data to augment generation
+ * - Sentinel Tokens: Using flags like "ANSWER_READY" to control flow
+ */
+
 import { Annotation, StateGraph, START, END } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'

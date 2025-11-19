@@ -1,6 +1,18 @@
 /**
- * 7.4.3 — Decide + Tool Graph
+ * Stage 7 – LangGraph Tools: Agentic Decision Making
+ * Micro-project: Routing between Tools and LLM Chat
+ *
+ * Objectives:
+ * 1. Implement a classifier to decide if a tool is needed
+ * 2. Route to the Weather tool for weather queries
+ * 3. Route to the LLM for general conversation
+ *
+ * Core Concepts Covered:
+ * - Intent Classification: Determining "Tool" vs "Chat" intent
+ * - Conditional Routing: Directing flow based on intent
+ * - Hybrid Workflow: Combining deterministic tools with probabilistic LLMs
  */
+
 import axios from 'axios'
 import { Annotation, StateGraph, START, END } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'

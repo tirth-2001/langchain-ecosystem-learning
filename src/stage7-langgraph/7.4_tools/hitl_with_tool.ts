@@ -1,8 +1,18 @@
 /**
- * graph-hitl-tool.ts
+ * Stage 7 – LangGraph Tools: Human-in-the-Loop Tool Approval
+ * Micro-project: Requiring human permission before executing tools
  *
- * 7.4.4 — HITL + Tool Node Demo
+ * Objectives:
+ * 1. Intercept tool execution requests with an approval node
+ * 2. Use `interrupt` to pause and wait for human decision
+ * 3. Resume with `Command.resume` to either execute or skip the tool
+ *
+ * Core Concepts Covered:
+ * - Sensitive Tools: Protecting dangerous actions (e.g., API writes)
+ * - Approval Workflow: Classifier -> Approval -> Execution
+ * - Resume Payloads: Passing boolean decisions back to the graph
  */
+
 import 'dotenv/config'
 import { Annotation, StateGraph, START, END, interrupt, Command, MemorySaver } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'

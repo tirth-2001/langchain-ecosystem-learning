@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Memory: RAG Integration
+ * Micro-project: Vector store retrieval within a graph node
+ *
+ * Objectives:
+ * 1. Initialize and use a VectorStore within a graph workflow
+ * 2. Create a dedicated retrieval node to fetch relevant documents
+ * 3. Pass retrieved context to the LLM node for grounded answers
+ *
+ * Core Concepts Covered:
+ * - Vector Stores: Storing and searching embeddings (MemoryVectorStore)
+ * - Retrieval Node: Separating retrieval logic from generation logic
+ * - Context Augmentation: Enhancing prompts with external knowledge
+ */
+
 import { Annotation, StateGraph, START, END } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'

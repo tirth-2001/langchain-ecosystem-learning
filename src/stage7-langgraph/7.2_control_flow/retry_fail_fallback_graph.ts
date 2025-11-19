@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Control Flow: Reliability Patterns
+ * Micro-project: Retry logic and Fallback mechanisms
+ *
+ * Objectives:
+ * 1. Implement a retry wrapper for unstable nodes (flaky APIs)
+ * 2. Detect failures after maximum retries are exhausted
+ * 3. Route to a fallback node to gracefully handle errors
+ *
+ * Core Concepts Covered:
+ * - Retry Pattern: Automatically retrying failed operations
+ * - Error Handling: Catching exceptions within the graph flow
+ * - Fallback: Providing a safe default response when things go wrong
+ */
+
 import { StateGraph, Annotation, END, START } from '@langchain/langgraph'
 import 'dotenv/config'
 

@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Control Flow: Conditional Classification
+ * Micro-project: Routing based on LLM classification
+ *
+ * Objectives:
+ * 1. Use an LLM to classify user intent (Search vs Respond)
+ * 2. Dynamically route the workflow based on the classification result
+ * 3. Implement specialized paths for different types of queries
+ *
+ * Core Concepts Covered:
+ * - Classifier Pattern: Using an LLM to decide the control flow
+ * - Conditional Edges: Routing logic based on state values
+ * - Specialized Nodes: Distinct handlers for different intents
+ */
+
 import { StateGraph, Annotation, END, START } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'

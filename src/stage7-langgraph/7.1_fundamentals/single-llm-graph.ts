@@ -1,3 +1,18 @@
+/**
+ * Stage 7 – LangGraph Fundamentals: Single LLM Node
+ * Micro-project: Integrating an LLM into a graph node
+ *
+ * Objectives:
+ * 1. Create a graph with a single node that calls an LLM
+ * 2. Use RunnableSequence to structure the LLM call
+ * 3. Map LLM output back to the graph state
+ *
+ * Core Concepts Covered:
+ * - ChatOpenAI: Using an LLM within a node
+ * - RunnableSequence: Composing prompt and model
+ * - State Mapping: Extracting content from LLM response to state
+ */
+
 import { StateGraph, Annotation, END } from '@langchain/langgraph'
 import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'

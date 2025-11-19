@@ -1,3 +1,19 @@
+/**
+ * Stage 7 – LangGraph Fundamentals: Reducers vs Nodes
+ * Micro-project: Deep dive into state management mechanics
+ *
+ * Objectives:
+ * 1. Clarify the distinct roles of Nodes (logic) and Reducers (state merging)
+ * 2. Demonstrate correct reducer signatures and behaviors
+ * 3. Show examples of partial updates, object merging, and common pitfalls
+ *
+ * Core Concepts Covered:
+ * - Reducer Signature: (current, update) => new_state
+ * - Partial Updates: How nodes can update specific parts of the state
+ * - State Merging: Strategies for combining data (append, replace, merge)
+ * - Anti-patterns: What NOT to do in reducers
+ */
+
 import { Annotation, StateGraph, END } from '@langchain/langgraph'
 
 /**
