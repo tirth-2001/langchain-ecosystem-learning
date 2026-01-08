@@ -112,4 +112,14 @@
 
 // import './stage7-langgraph/7.4_tools/hitl_with_tool'
 
-import './stage7-langgraph/7.4_tools/error_node_graph'
+//import './stage7-langgraph/7.4_tools/error_node_graph'
+
+// import './stage7-langgraph/7.5_multi_agent/two_agent_graph'
+
+// import './stage7-langgraph/7.5_multi_agent/specialist_agents_graph'
+
+// import './stage7-langgraph/7.5_multi_agent/shared_memory_agents'
+
+// import './stage7-langgraph/7.5_multi_agent/supervisor_and_helper_agents'
+
+import './stage7-langgraph/7.5_multi_agent/long_running_agents'
